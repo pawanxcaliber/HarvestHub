@@ -22,12 +22,12 @@ conn.execute('''CREATE TABLE IF NOT EXISTS irrigation_data
 def check_moisture():
     if GPIO.input(17) == 0: # Moisture level is low, turn on motor
         GPIO.output(23, GPIO.HIGH) # Turn on relay
-        motor_status = 'on'
+        motor_status = 'off'
         print("Moisture level is high. Motor is off.")
         send_sms('Motor off') # Send SMS notification
     else: # Moisture level is high, turn off motor
         GPIO.output(23, GPIO.LOW) # Turn off relay
-        motor_status = 'off'
+        motor_status = 'on'
         print("Moisture level is low. Motor is on.")
         send_sms('Motor on') # Send SMS notification
 
@@ -44,7 +44,7 @@ def check_moisture():
 def send_sms(message):
     # Replace the placeholders with your Twilio account SID, auth token, and phone numbers
     account_sid = 'AC4faa86624345646aaed13b90c247941a'
-    auth_token = '9b33186bb2874f1f051d1b663f0e5979'
+    auth_token = '16b6f9d7cdc3ab1dd8be77ef6877905a'
     from_number = '+12706068163'
     to_number = '+918073984203'
 
