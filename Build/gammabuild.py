@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import sqlite3
-from twilio.rest import Client
+from twilio.rest import Client # https://console.twilio.com/?frameUrl=%2Fconsole%3Fx-target-region%3Dus1&newCustomer=true
 
 # Set up GPIO pins
 GPIO.setmode(GPIO.BCM)
